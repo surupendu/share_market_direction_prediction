@@ -10,7 +10,6 @@ from utils import calculate_TIs, create_data
 import pickle
 from models.cnn import TA_CNN
 from models.lstm import TA_LSTM
-from models.dnn import TA_DNN
 from models.transformer import TA_Transformer
 import pandas as pd
 import warnings
@@ -45,8 +44,6 @@ elif classifier == "cnn":
     nifty_prediction_net = TA_CNN()
 elif classifier == "transformer":
     nifty_prediction_net = TA_Transformer()
-elif classifier == "dnn":
-    nifty_prediction_net = TA_DNN()
 
 criterion = nn.CrossEntropyLoss()
 optimizer = Adam(nifty_prediction_net.parameters(), lr=learning_rate)

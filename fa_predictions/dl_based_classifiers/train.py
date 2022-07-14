@@ -4,7 +4,6 @@ from utils import create_data, create_labelled_data
 from models.cnn import Predict_CNN
 from models.lstm import Predict_LSTM
 from models.transformer_model import Predict_Transformer
-from models.dnn import Predict_DNN
 
 import pandas as pd
 from data_loader import NiftyDatasetLoader
@@ -46,9 +45,6 @@ if classifier_name == "cnn":
 if classifier_name == "lstm":
     print("Prediction Model LSTM")
     predict_nn = Predict_LSTM()
-if classifier_name == "dnn":
-    print("Prediction Model DNN")
-    predict_nn = Predict_DNN(text_representation)
 
 optimizer = Adam(predict_nn.parameters(), lr=learning_rate)
 criterion = nn.CrossEntropyLoss()

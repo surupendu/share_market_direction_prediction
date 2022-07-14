@@ -20,8 +20,7 @@ class TA_Nifty_Prediction(nn.Module):
     attention_mask = torch.reshape(attention_mask, (batch_size*seq_len, sentence_len))
     output = self.bert_model(input_ids, attention_mask)
     last_hidden_state = output.last_hidden_state
-    # last_hidden_state = last_hidden_state[::,0]
-    last_hidden_state = torch.sum(last_hidden_state, dim=1)
+    last_hidden_state = last_hidden_state[::,0]
     _, word_dim = last_hidden_state.size()
     news_vectors = torch.reshape(last_hidden_state, (batch_size, seq_len, word_dim))
     news_vectors = news_vectors.transpose(1, 2)
