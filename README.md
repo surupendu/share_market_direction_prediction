@@ -9,6 +9,7 @@ https://drive.google.com/drive/folders/1KMubR2uZqiacWSHvKLl4MdXD8Yw4AqJZ?usp=sha
 
 
 ### If you use the code and dataset please cite the below paper
+### References
 
 @article{GANGOPADHYAY2023118472,
 title = {Text representation for direction prediction of share market},
